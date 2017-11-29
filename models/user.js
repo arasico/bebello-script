@@ -9,14 +9,14 @@ var usersSchema = mongoose.Schema({
     password: {type: String, required: true},
     updated_at: Number,
     created_at: Number,
-    token: {
+    token: [{
         uuid: String,
         token: String,
         expire_at: Number,
-        type: String,
+        type_Token: String,
         created_at: Number,
         updated_at: Number
-    }
+    }]
 })
 
 // create the model for users and expose it to our app
