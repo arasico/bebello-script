@@ -13,7 +13,7 @@ exports.postRegister = function (req, res) {
     // });
 
 
-    var secret = req.body.uuid;
+    var secret = req.header('uuid');
     var hash = crypto.createHmac('sha256', secret)
         .update(req.body.email)
         .digest('hex');
@@ -26,10 +26,10 @@ exports.postRegister = function (req, res) {
         updated_at: Date.now(),
         created_at: Date.now(),
         token: {
-            uuid: req.body.uuid,
+            uuid: req.header('uuid'),
             token: hash,
             expire_at: Date.now(),
-            type_token: req.body.agent,
+            type_token: req.header('agent'),
             created_at: Date.now(),
             updated_at: Date.now()
         }
