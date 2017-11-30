@@ -42,3 +42,10 @@ exports.postRegister = function (req, res) {
 
     res.json(user);
 };
+
+exports.test = function (req, res) {
+
+    var data = [req.header('uuid'), req.header('agent'), req.body];
+
+    res.json(data);
+};

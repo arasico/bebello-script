@@ -9,6 +9,7 @@ var AuthController = require('../Controllers/Api/V1/AuthController');
 //Route Auth
 router.post('/auth/login', AuthController.postLogin);
 router.post('/auth/register', AuthController.postRegister);
+router.post('/auth/test', AuthController.test);
 
 
 module.exports = router;
