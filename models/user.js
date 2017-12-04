@@ -13,7 +13,7 @@ var usersSchema = mongoose.Schema({
         uuid: String,
         token: String,
         expire_at: Number,
-        type_Token: String,
+        type_token: String,
         created_at: Number,
         updated_at: Number
     }]
